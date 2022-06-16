@@ -134,10 +134,8 @@ This package offers a set of functions to use in order to find a seed set of giv
         The outputs are printed on standard output stream in the following order
 
                 Seed Nodes: <list of selected seed nodes>
-
                 Mitigation: <Mitigation reward of the select seed set>
                 Time: <running time in seconds>
-                Memory: <peak memory used>
 
 5. (Optional) Verify mitigation of a seed set - returns a (epsilon, 1/n)-estimate of the mitigation:
         ./estimate_mit <binary graph file> <seed file> <epsilon>
