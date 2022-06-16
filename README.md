@@ -138,13 +138,15 @@ This package offers a set of functions to use in order to find a seed set of giv
                 Time: <running time in seconds>
 
 5. (Optional) Verify mitigation of a seed set - returns a (epsilon, 1/n)-estimate of the mitigation:
-        ./estimate_mit <binary graph file> <seed file> <epsilon>
+        
+		./estimate_mit <binary graph file> <seed file> <epsilon>
 
 ********************************************************************************************************
 
 Examples on a toy network: find seed set having 2 seed nodes on the graph network.txt:
 
 The sample network network.txt, in this case, contains only 4 nodes and 4 edges and is formated as follows:
+		
 		4 4
 		0 1 0.3
 		0 2 0.4
@@ -152,23 +154,29 @@ The sample network network.txt, in this case, contains only 4 nodes and 4 edges 
 		1 2 0.5
 
 1. Convert to binary file:
-	./el2bin network.txt network.bin network_rev.bin
+	
+		./el2bin network.txt network.bin network_rev.bin
 
 2. (Optional) Compute influence of singleton seed sets using 10K MC simulations:
-	./singleton_inf -i network -o singleton.inf -r 100000
+	
+		./singleton_inf -i network -o singleton.inf -r 100000
 
 3. Generate a fake seed at random:
-	./fake_seeds -n 4 -o fake.seeds -k 1 -m random
-	./fake_seeds -n 4 -o fake.seeds -k 1 -m top -f 0.25 -s singleton.inf
+	
+		./fake_seeds -n 4 -o fake.seeds -k 1 -m random
+		./fake_seeds -n 4 -o fake.seeds -k 1 -m top -f 0.25 -s singleton.inf
 
 4. Estimate influence of fake seed:
-	./fake_inf -o fake.inf -fakeseeds fake.seeds
+	
+		./fake_inf -o fake.inf -fakeseeds fake.seeds
 
 5. Run NAMM with k=2, epsilon=0.1, delta=0.01:
-	./namm -i network -fakeseeds fake.seeds -fakeinf fake.inf -k 2 -epsilon 0.1 -delta 0.01
+	
+		./namm -i network -fakeseeds fake.seeds -fakeinf fake.inf -k 2 -epsilon 0.1 -delta 0.01
 
 6. Verify mitigation reward with epsilon=0.01, assume that the seed nodes are put in network.seeds:
-	./estimate_mit network.bin network.seeds 0.01
+	
+		./estimate_mit network.bin network.seeds 0.01
 
 ********************************************************************************************************
 
