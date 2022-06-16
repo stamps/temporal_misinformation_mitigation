@@ -1,7 +1,7 @@
 # Misinformation Mitigation under Differential Propagation Rates and Temporal Penalties
-Code for the paper "Misinformation Mitigation under Differential Propagation Rates and Temporal Penalties"
+Code for the paper "Misinformation Mitigation under Differential Propagation Rates and Temporal Penalties" in VLDB 2022.
 
-Instructions to run NAMM for Misinformation Mitigation
+Instructions to run NAMM for Misinformation Mitigation.
 
 Information:
 --------------------------------------------------------
