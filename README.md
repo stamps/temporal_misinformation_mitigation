@@ -143,7 +143,7 @@ This package offers a set of functions to use in order to find a seed set of giv
 
 ********************************************************************************************************
 
-Examples on a toy network: find seed set having 2 seed nodes on the graph network.txt:
+Examples on a toy network: find seed set having 2 seed nodes on the graph network.txt.
 
 The sample network network.txt, in this case, contains only 4 nodes and 4 edges and is formated as follows:
 		
