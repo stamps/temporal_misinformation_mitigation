@@ -1,13 +1,11 @@
 # Misinformation Mitigation under Differential Propagation Rates and Temporal Penalties
 Code for the paper "Misinformation Mitigation under Differential Propagation Rates and Temporal Penalties" in VLDB 2022.
 
-Instructions to run NAMM for Misinformation Mitigation.
-
 Information:
 --------------------------------------------------------
 Version 1.0: Implementation of NAMM Algorithm for Misinformation Mitigation under Temporal Competitive Independent (TCIC). For more details about NAMM, please read our paper: "Simpson, M., Hashemi, F., Lakshmanan, L.S., Misinformation Mitigation under Differential Propagation Rates and Temporal Penalties, VLDB 2022"
 
-Contact Authors: Michael Simpson (mesimp@cs.ubc.ca)
+Contact Authors: Michael Simpson (michaelesimp@gmail.com)
 
 
 Requirements:
