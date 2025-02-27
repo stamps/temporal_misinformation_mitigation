@@ -23,21 +23,21 @@ How to use:
 This package offers a set of functions to use in order to find a seed set of given size k:
 
 0. (Optional) Computing edge weights (probabilities) as described in the experiments:
-		./format <input file> <output file> 1
+		`./format <input file> <output file> 1`
 
 		<input file>: the path to text file in edge list format with no weights: the first line contains the number of nodes n and number of edges m, each of the next m lines describes an edge following the format: <src> <dest>.
 		<output file>: the path to text output file with edge probabilities
 		The last parameter (1) means the input graph is considered as directed.
 
 1. Convert from a graph file in weighted edge list to two binary files that encode the graph and its transpose
-        ./el2bin <input file> <output file> <transpose output file>
+        `./el2bin <input file> <output file> <transpose output file>`
 
     	<input file>: the path to text file in weighted edge list format: the first line contains the number of nodes n and number of edges m, each of the next m lines describes an edge following the format: <src> <dest> <weight>.
     	<output file>: the path to binary output file for the input graph
     	<transpose output file>: the path to binary output file for the transpose graph
 
 2. (Optional) Compute influence of singleton seed sets
-		./singleton_inf [Options]
+		`./singleton_inf [Options]`
 
 	Options:
 
@@ -51,7 +51,7 @@ This package offers a set of functions to use in order to find a seed set of giv
 			number of monte carlo simulations used to estimate the influence of each node in the graph (default = 10,000)
 
 3. Generate fake seeds
-		./fake_seeds [Options]
+		`./fake_seeds [Options]`
 
 	Options:
 
@@ -74,7 +74,7 @@ This package offers a set of functions to use in order to find a seed set of giv
 			specify the path to the file containing the singleton influence values (default: singleton.inf)
 
 4. Compute influence of fake seeds
-		./fake_inf [Options]
+		`./fake_inf [Options]`
 
 	Options:
 
@@ -91,7 +91,7 @@ This package offers a set of functions to use in order to find a seed set of giv
             epsilon value in (epsilon,delta)-approximation (see our paper for more details, default = 0.1)
 
 4. Run NAMM to find the seed sets
-        ./namm [Options]
+        `./namm [Options]`
 
     Options:
 
@@ -137,7 +137,7 @@ This package offers a set of functions to use in order to find a seed set of giv
 
 5. (Optional) Verify mitigation of a seed set - returns a (epsilon, 1/n)-estimate of the mitigation:
         
-		./estimate_mit <binary graph file> <seed file> <epsilon>
+		`./estimate_mit <binary graph file> <seed file> <epsilon>`
 
 ********************************************************************************************************
 
@@ -153,28 +153,28 @@ The sample network network.txt, in this case, contains only 4 nodes and 4 edges 
 
 1. Convert to binary file:
 	
-		./el2bin network.txt network.bin network_rev.bin
+		`./el2bin network.txt network.bin network_rev.bin`
 
 2. (Optional) Compute influence of singleton seed sets using 10K MC simulations:
 	
-		./singleton_inf -i network -o singleton.inf -r 100000
+		`./singleton_inf -i network -o singleton.inf -r 100000`
 
 3. Generate a fake seed at random:
 	
-		./fake_seeds -n 4 -o fake.seeds -k 1 -m random
-		./fake_seeds -n 4 -o fake.seeds -k 1 -m top -f 0.25 -s singleton.inf
+		`./fake_seeds -n 4 -o fake.seeds -k 1 -m random`
+		`./fake_seeds -n 4 -o fake.seeds -k 1 -m top -f 0.25 -s singleton.inf`
 
 4. Estimate influence of fake seed:
 	
-		./fake_inf -o fake.inf -fakeseeds fake.seeds
+		`./fake_inf -o fake.inf -fakeseeds fake.seeds`
 
 5. Run NAMM with k=2, epsilon=0.1, delta=0.01:
 	
-		./namm -i network -fakeseeds fake.seeds -fakeinf fake.inf -k 2 -epsilon 0.1 -delta 0.01
+		`./namm -i network -fakeseeds fake.seeds -fakeinf fake.inf -k 2 -epsilon 0.1 -delta 0.01`
 
 6. Verify mitigation reward with epsilon=0.01, assume that the seed nodes are put in network.seeds:
 	
-		./estimate_mit network.bin network.seeds 0.01
+		`./estimate_mit network.bin network.seeds 0.01`
 
 ********************************************************************************************************
 
